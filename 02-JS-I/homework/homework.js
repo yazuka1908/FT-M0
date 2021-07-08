@@ -35,7 +35,8 @@ function suma(x, y) {
   // "x" e "y" son números
   // Suma "x" e "y" juntos y devuelve el valor
   // Tu código:
-  return x + y;
+  let resultadoSuma = x + y; 
+  return resultadoSuma;
 }
 
 function resta(x, y) {
@@ -47,7 +48,7 @@ function resta(x, y) {
 function multiplica(x, y) {
   // Multiplica "x" por "y" y devuelve el valor
   // Tu código:
-  return x * y;
+  return (x * y);
 }
 
 function divide(x, y) {
@@ -63,7 +64,7 @@ function sonIguales(x, y) {
   if (x === y) {
     return true;
   }
-
+  
   return false;
 }
 
@@ -122,11 +123,11 @@ function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if ((num % 2) === 0) {
-    return false;
+  if ((num % 2) !== 0) {
+    return true;
   }
 
-  return true;
+  return false;
 }
 
 function elevarAlCuadrado(num) {
@@ -171,13 +172,17 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
+  let respuesta = null;
+  
   if (numero > 0) {
-    return "Es positivo";
+    respuesta = "Es positivo";
   } else if (numero < 0) {
-    return "Es negativo";
+    respuesta = "Es negativo";
   } else {
-    return false;
+    respuesta =  false;
   }
+  
+  return respuesta;
 }
 
 function agregarSimboloExclamacion(str) {
@@ -207,14 +212,12 @@ function obtenerAreaRectangulo(alto, ancho) {
   return alto * ancho;
 }
 
-
 function retornarPerimetro(lado) {
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
   let perimetro = 4 * lado;
   return perimetro;
 }
-
 
 function areaDelTriangulo(base, altura) {
   //Desarrolle una función que calcule el área de un triángulo.
@@ -223,12 +226,11 @@ function areaDelTriangulo(base, altura) {
   return areaTriangulo;
 }
 
-
 function deEuroAdolar(euro) {
   //Supongamos que 1 euro equivale a 1.20 dólares. Escribe un programa que reciba
   //como parámetro un número de euros y calcule el cambio en dólares.
   //Escribe tu código aquí
-  let dolarXEuro = 1.20;
+  const dolarXEuro = 1.20;
   return (euro * dolarXEuro);
 }
 
@@ -238,26 +240,16 @@ function esVocal(letra) {
   //Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   //Escribe tu código aquí
+  
   if ((letra.length < 1) || (letra.length > 1)) {
     return "Dato incorrecto";
   }
-  if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+  
+  if (letra === "a","e","i","o","u") {
     return "Es vocal";
   } else {
     return "No es vocal";
   }
-  //////////-------------------------------------------
-
-  var variable = "hola"
-  
-  
-  var variable = 1
-
-  if (1 === "1") // false
-
-
-
-
 }
 
 
