@@ -10,6 +10,22 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  let nuevaMatriz = [];
+  
+  for (let llaveObj in objeto){
+    // tomo llave y valor
+    let llave = llaveObj;
+    let valor = objeto[llaveObj];
+    // Creo y agrego lista de fila y columna de matriz
+    let nuevoObjMatriz = [];
+    nuevoObjMatriz.push(llave); 
+    nuevoObjMatriz.push(valor);
+    // Agrego objeto a matriz
+    nuevaMatriz.push(nuevoObjMatriz);
+  }
+  
+  //console.log(nuevaMatriz);
+  return nuevaMatriz;  
 }
 
 
@@ -18,6 +34,33 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  let respuestaNumeroCaracteres = {};
+  let longitudCadena = string.length;
+
+  // "adsjfdsfsfjsdjfhacabcsbajda" Primer For  
+  // "adsjfdsfsfjsdjfhacabcsbajda" Segundo For
+
+  // For para desglozar cadena
+  for (let index = 0; index < longitudCadena; index++) {
+    let caracter = string.charAt(index);
+    let conteoCaracter = 0; 
+
+    // For para contar el numero de veces del caracter en cadena
+    for (let regString = 0; regString < longitudCadena; regString++) {
+      let caracterObtenido = string.charAt(regString);
+      
+      // Cuento solo si existe y soy igual
+      if (caracter === caracterObtenido){
+        conteoCaracter = conteoCaracter + 1;
+      }
+    } 
+    
+    // Almaceno mi respuesta por Clave - Valor
+    respuestaNumeroCaracteres[caracter] = conteoCaracter;
+  }
+  
+  //console.log("OBJETO ==>",respuestaNumeroCaracteres);
+  return respuestaNumeroCaracteres;
 }
 
 
@@ -26,6 +69,31 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let corregirCadena = null;
+  let longitudCadena = s.length;
+  let cadenaMayuscula = "";
+  let cadenaMiniscula = "";
+
+  // soyHENRY
+  // Mayus ==> HENRY
+  // Minus ==> soy
+
+  // For para recorres los caracteres de la cadena String
+  for (let index = 0; index < longitudCadena; index++) {
+    let caracter = s.charAt(index);
+    
+    // Evalua si el caracter inicial es igual al transformado en mayuscula, sino es minuscula
+    if (caracter === caracter.toUpperCase()){
+      cadenaMayuscula = cadenaMayuscula + caracter;
+    } else{
+      cadenaMiniscula = cadenaMiniscula + caracter;
+    }
+  }
+  
+  // Concateno primero parte mayuzcula y luego minuscula
+  corregirCadena = cadenaMayuscula + cadenaMiniscula;
+
+  return corregirCadena;
 }
 
 
